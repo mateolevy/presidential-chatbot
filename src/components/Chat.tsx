@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { FiSend } from "react-icons/fi";
 import { BsChevronDown, BsPlusLg } from "react-icons/bs";
 import { RxHamburgerMenu } from "react-icons/rx";
-import useAnalytics from "@/hooks/useAnalytics";
+// import useAnalytics from "@/hooks/useAnalytics";
 import useAutoResizeTextArea from "@/hooks/useAutoResizeTextArea";
 import Message from "./Message";
 import { DEFAULT_OPENAI_MODEL } from "@/shared/Constants";
@@ -15,7 +15,7 @@ const Chat = (props: any) => {
   const [showEmptyChat, setShowEmptyChat] = useState(true);
   const [conversation, setConversation] = useState<any[]>([]);
   const [message, setMessage] = useState("");
-  const { trackEvent } = useAnalytics();
+  // const { trackEvent } = useAnalytics();
   const textAreaRef = useAutoResizeTextArea();
   const bottomOfChatRef = useRef<HTMLDivElement>(null);
 
@@ -45,7 +45,7 @@ const Chat = (props: any) => {
       setErrorMessage("");
     }
 
-    trackEvent("send.message", { message: message });
+    // trackEvent("send.message", { message: message });
     setIsLoading(true);
 
     // Add the message to the conversation
@@ -137,7 +137,7 @@ const Chat = (props: any) => {
               {showEmptyChat ? (
                 <div className="py-10 relative w-full flex flex-col h-full">
                   <div className="flex items-center justify-center gap-2">
-                    <div className="relative w-full md:w-1/2 lg:w-1/3 xl:w-1/4">
+                    {/* <div className="relative w-full md:w-1/2 lg:w-1/3 xl:w-1/4">
                       <button
                         className="relative flex w-full cursor-default flex-col rounded-md border border-black/10 bg-white py-2 pl-3 pr-10 text-left focus:border-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 dark:border-white/20 dark:bg-gray-800 sm:text-sm align-center"
                         id="headlessui-listbox-button-:r0:"
@@ -163,10 +163,10 @@ const Chat = (props: any) => {
                           <BsChevronDown className="h-4 w-4 text-gray-400" />
                         </span>
                       </button>
-                    </div>
+                    </div> */}
                   </div>
                   <h1 className="text-2xl sm:text-4xl font-semibold text-center text-gray-200 dark:text-gray-600 flex gap-2 items-center justify-center h-screen">
-                    ChatGPT Clone
+                    Aria The Candidate
                   </h1>
                 </div>
               ) : null}
