@@ -4,6 +4,10 @@ import * as dotenv from "dotenv";
 import { NextApiRequest, NextApiResponse } from "next";
 import { ChatCompletionRequestMessage, Configuration, OpenAIApi } from "openai";
 
+export const config = {
+  maxDuration: 300,
+};
+
 // Get your environment variables
 dotenv.config();
 
